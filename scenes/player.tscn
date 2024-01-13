@@ -15,7 +15,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r7pot"]
-size = Vector2(113, 239)
+size = Vector2(111, 239)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(169, 696)
@@ -25,5 +25,5 @@ script = ExtResource("1_xsetn")
 sprite_frames = SubResource("SpriteFrames_a124e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 9.5)
+position = Vector2(0.5, 9.5)
 shape = SubResource("RectangleShape2D_r7pot")
