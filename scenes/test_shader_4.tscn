@@ -1,0 +1,40 @@
+[gd_scene load_steps=10 format=3 uid="uid://dlippo6h5mfxs"]
+
+[ext_resource type="Shader" path="res://test_shader4.gdshader" id="1_b1m26"]
+[ext_resource type="Script" path="res://scenes/test_shader_4.gd" id="1_oe4gx"]
+[ext_resource type="Texture2D" uid="uid://dv4k2vmal5ipj" path="res://icon.svg" id="2_idwxc"]
+[ext_resource type="Texture2D" uid="uid://c6g505wo3w6pd" path="res://black_gradient.png" id="2_pibpw"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_25ose"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_s8uv8"]
+seamless = true
+noise = SubResource("FastNoiseLite_25ose")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_rima8"]
+noise_type = 3
+frequency = 0.0106
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nxyn4"]
+seamless = true
+noise = SubResource("FastNoiseLite_rima8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dlfnl"]
+shader = ExtResource("1_b1m26")
+shader_parameter/scroll1 = Vector2(0.03, 0.34)
+shader_parameter/scroll2 = Vector2(-0.3, 0.5)
+shader_parameter/distortion_strength = 0.315
+shader_parameter/tone_color = null
+shader_parameter/noise1 = SubResource("NoiseTexture2D_s8uv8")
+shader_parameter/noise2 = SubResource("NoiseTexture2D_nxyn4")
+shader_parameter/textureBack = ExtResource("2_pibpw")
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_oe4gx")
+
+[node name="Shader2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_dlfnl")
+position = Vector2(-5, 4)
+scale = Vector2(196.563, 117.578)
+texture = ExtResource("2_idwxc")
+centered = false
