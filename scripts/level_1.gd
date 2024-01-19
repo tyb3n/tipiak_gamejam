@@ -17,6 +17,8 @@ func _ready():
 	node_timer = get_node("Timer")
 	node_halo = get_node("BackBufferCopy/halo")
 	start_pos = node_player.position
+	# Lets us keep the all-consuming darkness disabled in the editor
+	get_node("BackBufferCopy").show()
 
 
 
@@ -57,5 +59,5 @@ func _on_camp_fire_body_entered(_body):
 	node_timer.stop()
 
 
-func _on_camp_fire_body_exited(body):
+func _on_camp_fire_body_exited(_body):
 	node_timer.start()
