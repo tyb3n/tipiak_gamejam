@@ -128,7 +128,6 @@ shader = ExtResource("7_j1i0v")
 
 [node name="level_1" type="Node2D"]
 script = ExtResource("1_21yct")
-offset = Vector2(60, 60)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1926.0
@@ -173,7 +172,7 @@ texture = ExtResource("4_57keh")
 wait_time = 5.0
 
 [node name="player" parent="." instance=ExtResource("2_avs7p")]
-position = Vector2(101, 680)
+position = Vector2(124, 767)
 collision_layer = 3
 collision_mask = 3
 slide_on_ceiling = false
@@ -190,7 +189,7 @@ position = Vector2(-9360, -5474)
 
 [node name="halo" type="Sprite2D" parent="BackBufferCopy"]
 material = SubResource("ShaderMaterial_wonck")
-position = Vector2(171, 751)
+position = Vector2(158, 791)
 texture = ExtResource("4_57keh")
 
 [node name="fire" type="Sprite2D" parent="BackBufferCopy"]

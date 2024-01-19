@@ -7,7 +7,7 @@ var start_pos
 var node_timer
 var node_halo
 var level_started = false
-@export var offset = Vector2(56,43)
+@export var offset = Vector2(32,25)
 @export var zoom_speed = float(0.003)
 #@onready var screensize = get_viewport().size.x 
 # Called when the node enters the scene tree for the first time.
