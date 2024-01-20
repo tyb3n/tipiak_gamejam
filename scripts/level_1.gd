@@ -7,7 +7,7 @@ var start_pos
 var node_timer
 var node_halo
 var level_started = false
-@export var offset = Vector2(32,25)
+@export var offset = Vector2(56,43)
 @export var zoom_speed = float(0.003)
 #@onready var screensize = get_viewport().size.x 
 # Called when the node enters the scene tree for the first time.
@@ -17,8 +17,6 @@ func _ready():
 	node_timer = get_node("Timer")
 	node_halo = get_node("BackBufferCopy/halo")
 	start_pos = node_player.position
-	# Lets us keep the all-consuming darkness disabled in the editor
-	get_node("BackBufferCopy").show()
 
 
 
@@ -57,7 +55,9 @@ func _on_camp_fire_body_entered(_body):
 	get_node("BackBufferCopy/fire").scale = Vector2(1,1) * node_timer.wait_time/1.2
 	node_timer.start()
 	node_timer.stop()
+	Wwise.register_game_obj(self, "BackBufferCopy/fire")
+	Wwise.post_event("Play_SFX_CheckpointActivated", self)
 
 
-func _on_camp_fire_body_exited(_body):
+func _on_camp_fire_body_exited(body):
 	node_timer.start()

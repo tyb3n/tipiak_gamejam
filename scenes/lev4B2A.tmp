@@ -146,6 +146,13 @@ load_on = 1
 
 [node name="AkListener2D" type="AkListener2D" parent="."]
 
+[node name="AkEvent2D" type="AkEvent2D" parent="."]
+event = {
+"id": 562256996,
+"name": "Play_Player_Jump"
+}
+trigger_on = 1
+
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1926.0
 offset_bottom = 1121.0
